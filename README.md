@@ -1,8 +1,9 @@
 # Extrair dados de operadoras de saúde da ANS
 
 
-Arquivos:
+Importante:
  * Python 3
+ * Tempo de execução +- 5min
  * ans-extrair.py é o script que extrair os dados e salva como JSON
  * ans-leitura.py modelo para leitura do JSON
  * planos_de_saude.json dados extraido em 

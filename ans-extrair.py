@@ -2,11 +2,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 from bs4 import BeautifulSoup
-import codecs
-import os
-import requests
-import urllib
-import json
+import codecs, io, requests, urllib, json, time
 
 def getPage(letra, s):
     payload = {
@@ -71,6 +67,8 @@ def getPlan(codigo, s):
     
     return item
 
+ini = time.time()
+
 s = requests.session()
 s.get('http://www.ans.gov.br/portal/site/perfil_operadoras/consulta_operadoras/default.asp')
 
@@ -99,3 +97,5 @@ for key in todos:
 
 with io.open('planos_de_saude.json', 'w', encoding='utf-8') as f:
     json.dump(lista, f, ensure_ascii=False)
+
+print("Tempo de execução:", time.time()-ini)
